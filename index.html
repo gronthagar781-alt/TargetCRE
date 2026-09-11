@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRE JMLT Exam Prep - Study Hub</title>
+    <meta name="description" content="Complete preparation platform for CRE JMLT exam with study notes, MCQ practice, mock tests, and AI assistance">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Sidebar Navigation -->
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">📚 JMLT Prep</h1>
+                <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar">✕</button>
+            </div>
+            <div class="nav-items">
+                <a href="#dashboard" class="nav-item active" data-page="dashboard">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-label" data-en="Dashboard" data-bn="ড্যাশবোর্ড">Dashboard</span>
+                </a>
+                <a href="#notes" class="nav-item" data-page="notes">
+                    <span class="nav-icon">📖</span>
+                    <span class="nav-label" data-en="Study Notes" data-bn="স্টাডি নোট">Study Notes</span>
+                </a>
+                <a href="#practice" class="nav-item" data-page="practice">
+                    <span class="nav-icon">✏️</span>
+                    <span class="nav-label" data-en="MCQ Practice" data-bn="MCQ অনুশীলন">MCQ Practice</span>
+                </a>
+                <a href="#mock-test" class="nav-item" data-page="mock-test">
+                    <span class="nav-icon">📝</span>
+                    <span class="nav-label" data-en="Mock Tests" data-bn="মক টেস্ট">Mock Tests</span>
+                </a>
+                <a href="#rapid-quiz" class="nav-item" data-page="rapid-quiz">
+                    <span class="nav-icon">⚡</span>
+                    <span class="nav-label" data-en="Rapid Quiz" data-bn="র‍্যাপিড কুইজ">Rapid Quiz</span>
+                </a>
+                <a href="#current-affairs" class="nav-item" data-page="current-affairs">
+                    <span class="nav-icon">📰</span>
+                    <span class="nav-label" data-en="Current Affairs" data-bn="সাম্প্রতিক ঘটনা">Current Affairs</span>
+                </a>
+                <a href="#growth" class="nav-item" data-page="growth">
+                    <span class="nav-icon">📈</span>
+                    <span class="nav-label" data-en="Growth Analysis" data-bn="গ্রোথ অ্যানালাইসিস">Growth Analysis</span>
+                </a>
+                <a href="#ai-assistant" class="nav-item" data-page="ai-assistant">
+                    <span class="nav-icon">🤖</span>
+                    <span class="nav-label" data-en="AI Assistant" data-bn="এআই সহকারী">AI Assistant</span>
+                </a>
+                <a href="#upload" class="nav-item" data-page="upload">
+                    <span class="nav-icon">📤</span>
+                    <span class="nav-label" data-en="Upload PDF" data-bn="পিডিএফ আপলোড">Upload PDF</span>
+                </a>
+                <a href="#settings" class="nav-item" data-page="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-label" data-en="Settings" data-bn="সেটিংস">Settings</span>
+                </a>
+            </div>
+            <div class="sidebar-footer">
+                <div class="streak-badge" id="streak-badge" style="display:none;">
+                    🔥 <span id="streak-days">0</span> day streak
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main id="main-content" class="main-content">
+            <header class="top-bar">
+                <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">☰</button>
+                <div class="top-bar-title" id="page-title">Dashboard</div>
+                <div class="top-bar-actions">
+                    <div class="lang-toggle">
+                        <button class="lang-btn" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="bn">বাংলা</button>
+                        <button class="lang-btn active" data-lang="bi">Bilingual</button>
+                    </div>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+                </div>
+            </header>
+            <div id="page-content" class="page-content"></div>
+        </main>
+    </div>
+
+    <!-- AI Chat Widget -->
+    <div id="ai-chat-widget" class="ai-chat-widget" style="display:none;">
+        <div class="ai-chat-header" id="ai-chat-header">
+            <span>🤖 AI Assistant</span>
+            <button id="ai-chat-close" class="ai-chat-close">✕</button>
+        </div>
+        <div class="ai-chat-body" id="ai-chat-messages"></div>
+        <div class="ai-chat-input-area">
+            <input type="text" id="ai-chat-input" placeholder="Ask a question..." />
+            <button id="ai-chat-send" class="btn-primary">Send</button>
+        </div>
+    </div>
+    <button id="ai-chat-fab" class="ai-chat-fab" aria-label="Open AI chat">🤖</button>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <p id="loading-text">Loading...</p>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/ai-chat.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
